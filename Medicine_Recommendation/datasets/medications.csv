@@ -1,42 +1,42 @@
-Disease,Medication
-Fungal infection,"['Antifungal Cream', 'Fluconazole', 'Terbinafine', 'Clotrimazole', 'Ketoconazole']"
-Allergy,"['Antihistamines', 'Decongestants', 'Epinephrine', 'Corticosteroids', 'Immunotherapy']"
-GERD,"['Proton Pump Inhibitors (PPIs)', 'H2 Blockers', 'Antacids', 'Prokinetics', 'Antibiotics']"
-Chronic cholestasis,"['Ursodeoxycholic acid', 'Cholestyramine', 'Methotrexate', 'Corticosteroids', 'Liver transplant']"
-Drug Reaction,"['Antihistamines', 'Epinephrine', 'Corticosteroids', 'Antibiotics', 'Antifungal Cream']"
-Peptic ulcer disease,"['Antibiotics', 'Proton Pump Inhibitors (PPIs)', 'H2 Blockers', 'Antacids', 'Cytoprotective agents']"
-AIDS,"['Antiretroviral drugs', 'Protease inhibitors', 'Integrase inhibitors', 'Entry inhibitors', 'Fusion inhibitors']"
-Diabetes,"['Insulin', 'Metformin', 'Sulfonylureas', 'DPP-4 inhibitors', 'GLP-1 receptor agonists']"
-Gastroenteritis,"['Antibiotics', 'Antiemetic drugs', 'Antidiarrheal drugs', 'IV fluids', 'Probiotics']"
-Bronchial Asthma,"['Bronchodilators', 'Inhaled corticosteroids', 'Leukotriene modifiers', 'Mast cell stabilizers', 'Anticholinergics']"
-Hypertension,"['Antihypertensive medications', 'Diuretics', 'Beta-blockers', 'ACE inhibitors', 'Calcium channel blockers']"
-Migraine,"['Analgesics', 'Triptans', 'Ergotamine derivatives', 'Preventive medications', 'Biofeedback']"
-Cervical spondylosis,"['Pain relievers', 'Muscle relaxants', 'Physical therapy', 'Neck braces', 'Corticosteroids']"
-Paralysis (brain hemorrhage),"['Blood thinners', 'Clot-dissolving medications', 'Anticonvulsants', 'Physical therapy', 'Occupational therapy']"
-Jaundice,"['IV fluids', 'Blood transfusions', 'Liver transplant', 'Medications for itching', 'Antiviral medications']"
-Malaria,"['Antimalarial drugs', 'Antipyretics', 'Antiemetic drugs', 'IV fluids', 'Blood transfusions']"
-Chicken pox,"['Antiviral drugs', 'Pain relievers', 'IV fluids', 'Blood transfusions', 'Platelet transfusions']"
-Dengue,"['Antibiotics', 'Antipyretics', 'Analgesics', 'IV fluids', 'Corticosteroids']"
-Typhoid,"['Vaccination', 'Antiviral drugs', 'IV fluids', 'Blood transfusions', 'Liver transplant']"
-hepatitis A,"['Vaccination', 'Antiviral drugs', 'IV fluids', 'Blood transfusions', 'Liver transplant']"
-Hepatitis B,"['Antiviral drugs', 'IV fluids', 'Blood transfusions', 'Platelet transfusions', 'Liver transplant']"
-Hepatitis C,"['Antiviral drugs', 'IV fluids', 'Blood transfusions', 'Platelet transfusions', 'Liver transplant']"
-Hepatitis D,"['Antiviral drugs', 'IV fluids', 'Blood transfusions', 'Platelet transfusions', 'Liver transplant']"
-Hepatitis E,"['Alcohol cessation', 'Corticosteroids', 'IV fluids', 'Liver transplant', 'Nutritional support']"
-Alcoholic hepatitis,"['Antibiotics', 'Isoniazid', 'Rifampin', 'Ethambutol', 'Pyrazinamide']"
-Tuberculosis,"['Antipyretics', 'Decongestants', 'Cough suppressants', 'Antihistamines', 'Pain relievers']"
-Common Cold,"['Antibiotics', 'Antiviral drugs', 'Antifungal drugs', 'IV fluids', 'Oxygen therapy']"
-Pneumonia,"['Laxatives', 'Pain relievers', 'Warm baths', 'Cold compresses', 'High-fiber diet']"
-Dimorphic hemmorhoids(piles),"['Nitroglycerin', 'Aspirin', 'Beta-blockers', 'Calcium channel blockers', 'Thrombolytic drugs']"
-Heart attack,"['Compression stockings', 'Exercise', 'Elevating the legs', 'Sclerotherapy', 'Laser treatments']"
-Varicose veins,"['Levothyroxine', 'Antithyroid medications', 'Beta-blockers', 'Radioactive iodine', 'Thyroid surgery']"
-Hypothyroidism,"['Antithyroid medications', 'Radioactive iodine', 'Thyroid surgery', 'Beta-blockers', 'Corticosteroids']"
-Hyperthyroidism,"['Glucose tablets', 'Candy or juice', 'Glucagon injection', 'IV dextrose', 'Diazoxide']"
-Hypoglycemia,"['Pain relievers', 'Exercise', 'Hot and cold packs', 'Joint protection', 'Physical therapy']"
-Osteoarthristis,"['NSAIDs', 'Disease-modifying antirheumatic drugs (DMARDs)', 'Biologics', 'Corticosteroids', 'Joint replacement surgery']"
-Arthritis,"['Vestibular rehabilitation', 'Canalith repositioning', 'Medications for nausea', 'Surgery', 'Home exercises']"
-(vertigo) Paroymsal Positional Vertigo,"['Topical treatments', 'Antibiotics', 'Oral medications', 'Hormonal treatments', 'Isotretinoin']"
-Acne,"['Antibiotics', 'Pain relievers', 'Antihistamines', 'Corticosteroids', 'Topical treatments']"
-Urinary tract infection,"['Antibiotics', 'Urinary analgesics', 'Phenazopyridine', 'Antispasmodics', 'Probiotics']"
-Psoriasis,"['Topical treatments', 'Phototherapy', 'Systemic medications', 'Biologics', 'Coal tar']"
-Impetigo,"['Topical antibiotics', 'Oral antibiotics', 'Antiseptics', 'Ointments', 'Warm compresses']"
+Disease,Medication,Link
+Fungal infection,"['Antifungal Cream', 'Fluconazole', 'Terbinafine', 'Clotrimazole', 'Ketoconazole']",https://www.apollohospitals.com/keywords/fungal-infection
+Allergy,"['Antihistamines', 'Decongestants', 'Epinephrine', 'Corticosteroids', 'Immunotherapy']",https://www.apollohospitals.com/keywords/allergy
+GERD,"['Proton Pump Inhibitors (PPIs)', 'H2 Blockers', 'Antacids', 'Prokinetics', 'Antibiotics']",https://www.apollohospitals.com/keywords/gerd
+Chronic cholestasis,"['Ursodeoxycholic acid', 'Cholestyramine', 'Methotrexate', 'Corticosteroids', 'Liver transplant']",https://www.apollohospitals.com/keywords/chronic-cholestasis
+Drug Reaction,"['Antihistamines', 'Epinephrine', 'Corticosteroids', 'Antibiotics', 'Antifungal Cream']",https://www.apollohospitals.com/keywords/drug-reaction
+Peptic ulcer disease,"['Antibiotics', 'Proton Pump Inhibitors (PPIs)', 'H2 Blockers', 'Antacids', 'Cytoprotective agents']",https://www.apollohospitals.com/keywords/peptic-ulcer-disease
+AIDS,"['Antiretroviral drugs', 'Protease inhibitors', 'Integrase inhibitors', 'Entry inhibitors', 'Fusion inhibitors']",https://www.apollohospitals.com/keywords/aids
+Diabetes,"['Insulin', 'Metformin', 'Sulfonylureas', 'DPP-4 inhibitors', 'GLP-1 receptor agonists']",https://www.apollohospitals.com/keywords/diabetes
+Gastroenteritis,"['Antibiotics', 'Antiemetic drugs', 'Antidiarrheal drugs', 'IV fluids', 'Probiotics']",https://www.apollohospitals.com/keywords/gastroenteritis
+Bronchial Asthma,"['Bronchodilators', 'Inhaled corticosteroids', 'Leukotriene modifiers', 'Mast cell stabilizers', 'Anticholinergics']",https://www.apollohospitals.com/keywords/bronchial-asthma
+Hypertension,"['Antihypertensive medications', 'Diuretics', 'Beta-blockers', 'ACE inhibitors', 'Calcium channel blockers']",https://www.apollohospitals.com/keywords/hypertension
+Migraine,"['Analgesics', 'Triptans', 'Ergotamine derivatives', 'Preventive medications', 'Biofeedback']",https://www.apollohospitals.com/keywords/migraine
+Cervical spondylosis,"['Pain relievers', 'Muscle relaxants', 'Physical therapy', 'Neck braces', 'Corticosteroids']",https://www.apollohospitals.com/keywords/cervical-spondylosis
+Paralysis (brain hemorrhage),"['Blood thinners', 'Clot-dissolving medications', 'Anticonvulsants', 'Physical therapy', 'Occupational therapy']",https://www.apollohospitals.com/keywords/paralysis-brain-hemorrhage
+Jaundice,"['IV fluids', 'Blood transfusions', 'Liver transplant', 'Medications for itching', 'Antiviral medications']",https://www.apollohospitals.com/keywords/jaundice
+Malaria,"['Antimalarial drugs', 'Antipyretics', 'Antiemetic drugs', 'IV fluids', 'Blood transfusions']",https://www.apollohospitals.com/keywords/malaria
+Chicken pox,"['Antiviral drugs', 'Pain relievers', 'IV fluids', 'Blood transfusions', 'Platelet transfusions']",https://www.apollohospitals.com/keywords/chicken-pox
+Dengue,"['Antibiotics', 'Antipyretics', 'Analgesics', 'IV fluids', 'Corticosteroids']",https://www.apollohospitals.com/keywords/dengue
+Typhoid,"['Vaccination', 'Antiviral drugs', 'IV fluids', 'Blood transfusions', 'Liver transplant']",https://www.apollohospitals.com/keywords/typhoid
+Hepatitis A,"['Vaccination', 'Antiviral drugs', 'IV fluids', 'Blood transfusions', 'Liver transplant']",https://www.apollohospitals.com/keywords/hepatitis-a
+Hepatitis B,"['Antiviral drugs', 'IV fluids', 'Blood transfusions', 'Platelet transfusions', 'Liver transplant']",https://www.apollohospitals.com/keywords/hepatitis-b
+Hepatitis C,"['Antiviral drugs', 'IV fluids', 'Blood transfusions', 'Platelet transfusions', 'Liver transplant']",https://www.apollohospitals.com/keywords/hepatitis-c
+Hepatitis D,"['Antiviral drugs', 'IV fluids', 'Blood transfusions', 'Platelet transfusions', 'Liver transplant']",https://www.apollohospitals.com/keywords/hepatitis-d
+Hepatitis E,"['Alcohol cessation', 'Corticosteroids', 'IV fluids', 'Liver transplant', 'Nutritional support']",https://www.apollohospitals.com/keywords/hepatitis-e
+Alcoholic hepatitis,"['Antibiotics', 'Isoniazid', 'Rifampin', 'Ethambutol', 'Pyrazinamide']",https://www.apollohospitals.com/keywords/alcoholic-hepatitis
+Tuberculosis,"['Antipyretics', 'Decongestants', 'Cough suppressants', 'Antihistamines', 'Pain relievers']",https://www.apollohospitals.com/keywords/tuberculosis
+Common Cold,"['Antibiotics', 'Antiviral drugs', 'Antifungal drugs', 'IV fluids', 'Oxygen therapy']",https://www.apollohospitals.com/keywords/common-cold
+Pneumonia,"['Laxatives', 'Pain relievers', 'Warm baths', 'Cold compresses', 'High-fiber diet']",https://www.apollohospitals.com/keywords/pneumonia
+Dimorphic hemorrhoids,"['Nitroglycerin', 'Aspirin', 'Beta-blockers', 'Calcium channel blockers', 'Thrombolytic drugs']",https://www.apollohospitals.com/keywords/dimorphic-hemorrhoids
+Heart attack,"['Compression stockings', 'Exercise', 'Elevating the legs', 'Sclerotherapy', 'Laser treatments']",https://www.apollohospitals.com/keywords/heart-attack
+Varicose veins,"['Levothyroxine', 'Antithyroid medications', 'Beta-blockers', 'Radioactive iodine', 'Thyroid surgery']",https://www.apollohospitals.com/keywords/varicose-veins
+Hypothyroidism,"['Antithyroid medications', 'Radioactive iodine', 'Thyroid surgery', 'Beta-blockers', 'Corticosteroids']",https://www.apollohospitals.com/keywords/hypothyroidism
+Hyperthyroidism,"['Glucose tablets', 'Candy or juice', 'Glucagon injection', 'IV dextrose', 'Diazoxide']",https://www.apollohospitals.com/keywords/hyperthyroidism
+Hypoglycemia,"['Pain relievers', 'Exercise', 'Hot and cold packs', 'Joint protection', 'Physical therapy']",https://www.apollohospitals.com/keywords/hypoglycemia
+Osteoarthritis,"['NSAIDs', 'Disease-modifying antirheumatic drugs (DMARDs)', 'Biologics', 'Corticosteroids', 'Joint replacement surgery']",https://www.apollohospitals.com/keywords/osteoarthritis
+Arthritis,"['Vestibular rehabilitation', 'Canalith repositioning', 'Medications for nausea', 'Surgery', 'Home exercises']",https://www.apollohospitals.com/keywords/arthritis
+Vertigo,"['Topical treatments', 'Antibiotics', 'Oral medications', 'Hormonal treatments', 'Isotretinoin']",https://www.apollohospitals.com/keywords/vertigo
+Acne,"['Antibiotics', 'Pain relievers', 'Antihistamines', 'Corticosteroids', 'Topical treatments']",https://www.apollohospitals.com/keywords/acne
+Urinary tract infection,"['Antibiotics', 'Urinary analgesics', 'Phenazopyridine', 'Antispasmodics', 'Probiotics']",https://www.apollohospitals.com/keywords/urinary-tract-infection
+Psoriasis,"['Topical treatments', 'Phototherapy', 'Systemic medications', 'Biologics', 'Coal tar']",https://www.apollohospitals.com/keywords/psoriasis
+Impetigo,"['Topical antibiotics', 'Oral antibiotics', 'Antiseptics', 'Ointments', 'Warm compresses']",https://www.apollohospitals.com/keywords/impetigo
