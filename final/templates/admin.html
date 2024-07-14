@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Section</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-image: url("https://t3.ftcdn.net/jpg/04/87/69/28/360_F_487692869_V8MZ1hLvhXQZKT50EV8Sh13AkdibGJb3.jpg"); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #admin-container {
+            width: 80%;
+            max-width: 900px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #007bff; /* Primary color for headings */
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        #user-data-section, #archive-data-section, #recycle-bin-data-section {
+            margin-top: 20px;
+            text-align: left; /* Align data to the left */
+            display: none; /* Hide by default */
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+        
+        .action-buttons {
+            margin-top: 10px;
+        }
+
+        .action-buttons button {
+            margin-right: 10px;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 300px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .modal-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .modal-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div id="admin-container">
+    <h2>Admin Section</h2>
+    <button onclick="showPasswordPrompt()">View User Data</button>
+    <button onclick="navigateToSection('archive-data-section')">View Archive Data</button>
+    <button onclick="navigateToSection('recycle-bin-data-section')">View Recycle Bin</button>
+    
+    <div id="user-data-section">
+        <div id="user-data"></div>
+    </div>
+    <div id="archive-data-section">
+        <div id="archive-data"></div>
+    </div>
+    <div id="recycle-bin-data-section">
+        <div id="recycle-bin-data"></div>
+    </div>
+</div>
+
+<!-- Password Prompt Modal -->
+<div id="passwordModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p>Enter admin password:</p>
+        <input type="password" id="adminPasswordInput">
+        <button class="modal-button" onclick="checkPassword()">OK</button>
+    </div>
+</div>
+
+<!-- Incorrect Password Modal -->
+<div id="incorrectPasswordModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p>Incorrect password.</p>
+        <button class="modal-button" onclick="closeModal()">OK</button>
+    </div>
+</div>
+
+<script>
+    const ADMIN_PASSWORD = 'admin123'; // Change this password as needed
+
+    function showPasswordPrompt() {
+        var modal = document.getElementById("passwordModal");
+        modal.style.display = "block";
+    }
+
+    function checkPassword() {
+        var passwordInput = document.getElementById('adminPasswordInput').value;
+        if (passwordInput === ADMIN_PASSWORD) {
+            closeModal();
+            updateAdminSection();
+        } else {
+            closeModal();
+            showIncorrectPasswordModal();
+        }
+    }
+
+    function showIncorrectPasswordModal() {
+        var modal = document.getElementById("incorrectPasswordModal");
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        var modals = document.getElementsByClassName('modal');
+        for (var i = 0; i < modals.length; i++) {
+            modals[i].style.display = "none";
+        }
+    }
+
+    function navigateToSection(sectionId) {
+        document.getElementById('user-data-section').style.display = 'none';
+        document.getElementById('archive-data-section').style.display = 'none';
+        document.getElementById('recycle-bin-data-section').style.display = 'none';
+        
+        document.getElementById(sectionId).style.display = 'block';
+
+        if (sectionId === 'archive-data-section') {
+            showArchiveData();
+        } else if (sectionId === 'recycle-bin-data-section') {
+            showRecycleBinData();
+        }
+    }
+
+    function updateAdminSection() {
+        var userData = JSON.parse(localStorage.getItem('userData')) || [];
+        var userDataDiv = document.getElementById('user-data');
+        userDataDiv.innerHTML = '';
+        userData.forEach((data, index) => {
+            userDataDiv.innerHTML += `
+                <div>
+                    <p><strong>Entry ${index + 1}</strong></p>
+                    <p><strong>Contact Name:</strong> ${data.contactName}</p>
+                    <p><strong>Contact Phone:</strong> ${data.contactPhone}</p>
+                    <p><strong>Medication:</strong> ${data.medication}</p>
+                    <p><strong>Time:</strong> ${data.time}</p>
+                    <div class="action-buttons">
+                        <button onclick="deleteEntry(${index})">Delete</button>
+                        <button onclick="archiveEntry(${index})">Move to Archive</button>
+                    </div>
+                </div>
+                <hr>
+            `;
+        });
+        navigateToSection('user-data-section');
+    }
+
+    function deleteEntry(index) {
+        var userData = JSON.parse(localStorage.getItem('userData')) || [];
+        var recycleBinData = JSON.parse(localStorage.getItem('recycleBinData')) || [];
+        var entry = userData.splice(index, 1)[0];
+        entry.deleteDate = new Date().toISOString();
+        recycleBinData.push(entry);
+        localStorage.setItem('userData', JSON.stringify(userData));
+        localStorage.setItem('recycleBinData', JSON.stringify(recycleBinData));
+        updateAdminSection();
+    }
+
+    function archiveEntry(index) {
+        var userData = JSON.parse(localStorage.getItem('userData')) || [];
+        var archivedData = JSON.parse(localStorage.getItem('archivedData')) || [];
+        archivedData.push(userData[index]);
+        localStorage.setItem('archivedData', JSON.stringify(archivedData));
+        deleteEntry(index);
+    }
+
+    function showArchiveData() {
+        var archivedData = JSON.parse(localStorage.getItem('archivedData')) || [];
+        var archivedDataDiv = document.getElementById('archive-data');
+        archivedDataDiv.innerHTML = '';
+        archivedData.forEach((data, index) => {
+            archivedDataDiv.innerHTML += `
+                <div>
+                    <p><strong>Entry ${index + 1}</strong></p>
+                    <p><strong>Contact Name:</strong> ${data.contactName}</p>
+                    <p><strong>Contact Phone:</strong> ${data.contactPhone}</p>
+                    <p><strong>Medication:</strong> ${data.medication}</p>
+                    <p><strong>Time:</strong> ${data.time}</p>
+                    <div class="action-buttons">
+                        <button onclick="retrieveFromArchive(${index})">Retrieve</button>
+                    </div>
+                </div>
+                <hr>
+            `;
+        });
+    }
+
+    function retrieveFromArchive(index) {
+        var archivedData = JSON.parse(localStorage.getItem('archivedData')) || [];
+        var userData = JSON.parse(localStorage.getItem('userData')) || [];
+        userData.push(archivedData.splice(index, 1)[0]);
+        localStorage.setItem('userData', JSON.stringify(userData));
+        localStorage.setItem('archivedData', JSON.stringify(archivedData));
+        showArchiveData();
+    }
+
+    function showRecycleBinData() {
+        var recycleBinData = JSON.parse(localStorage.getItem('recycleBinData')) || [];
+        var recycleBinDataDiv = document.getElementById('recycle-bin-data');
+        recycleBinDataDiv.innerHTML = '';
+        var now = new Date();
+        recycleBinData.forEach((data, index) => {
+            var deleteDate = new Date(data.deleteDate);
+            var daysDiff = Math.floor((now - deleteDate) / (1000 * 60 * 60 * 24));
+            recycleBinDataDiv.innerHTML += `
+                <div>
+                    <p><strong>Entry ${index + 1}</strong></p>
+                    <p><strong>Contact Name:</strong> ${data.contactName}</p>
+                    <p><strong>Contact Phone:</strong> ${data.contactPhone}</p>
+                    <p><strong>Medication:</strong> ${data.medication}</p>
+                    <p><strong>Time:</strong> ${data.time}</p>
+                    <p><strong>Days in Recycle Bin:</strong> ${daysDiff}</p>
+                    <div class="action-buttons">
+                        <button onclick="retrieveFromRecycleBin(${index})">Retrieve</button>
+                        <button onclick="permanentlyDelete(${index})">Permanently Delete</button>
+                    </div>
+                </div>
+                <hr>
+            `;
+        });
+        removeExpiredRecycleBinData();
+    }
+
+    function retrieveFromRecycleBin(index) {
+        var recycleBinData = JSON.parse(localStorage.getItem('recycleBinData')) || [];
+        var userData = JSON.parse(localStorage.getItem('userData')) || [];
+        userData.push(recycleBinData.splice(index, 1)[0]);
+        localStorage.setItem('userData', JSON.stringify(userData));
+        localStorage.setItem('recycleBinData', JSON.stringify(recycleBinData));
+        showRecycleBinData();
+    }
+
+    function permanentlyDelete(index) {
+        var recycleBinData = JSON.parse(localStorage.getItem('recycleBinData')) || [];
+        recycleBinData.splice(index, 1);
+        localStorage.setItem('recycleBinData', JSON.stringify(recycleBinData));
+        showRecycleBinData();
+    }
+
+    function removeExpiredRecycleBinData() {
+        var recycleBinData = JSON.parse(localStorage.getItem('recycleBinData')) || [];
+        var now = new Date();
+        recycleBinData = recycleBinData.filter(data => {
+            var deleteDate = new Date(data.deleteDate);
+            return (now - deleteDate) / (1000 * 60 * 60 * 24) <= 30;
+        });
+        localStorage.setItem('recycleBinData', JSON.stringify(recycleBinData));
+    }
+
+    window.onclick = function(event) {
+        var modals = document.getElementsByClassName('modal');
+        for (var i = 0; i < modals.length; i++) {
+            if (event.target == modals[i]) {
+                modals[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
